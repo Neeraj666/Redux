@@ -1,11 +1,10 @@
-import React from "react-dom/client";
+import ReactDOM from "react-dom/client";
 import App from "./App";
+import 'mdb-react-ui-kit/dist/css/mdb.min.css';
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
-import Reducer from "./Reducer";
-import {legacy_createStore as createStore } from "redux";
+import { store } from "./app/store";
 import { Provider } from "react-redux";
 
-const store = createStore(Reducer);
-
-const root = React.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(<Provider store={store}><App /></Provider>);
